@@ -1,17 +1,16 @@
 package main
 
 import (
-    "github.com/ccolin84/alexa-whiskey-skill/whiskeyapi"
-    "github.com/ccolin84/alexa-whiskey-skill/alexa"
-    "github.com/aws/aws-lambda-go/lambda"
+	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/colinlcrawford/alexa-whiskey-skill/alexa"
+	"github.com/colinlcrawford/alexa-whiskey-skill/whiskeyapi"
 )
 
-
 func HandleRequest() (alexa.Response, error) {
-    randomFact := whiskeyapi.GetRandomWhiskeyFact()
-    return alexa.NewResponse(randomFact), nil
+	randomFact := whiskeyapi.GetRandomWhiskeyFact()
+	return alexa.NewResponse(randomFact), nil
 }
 
 func main() {
-    lambda.Start(HandleRequest)
+	lambda.Start(HandleRequest)
 }
