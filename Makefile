@@ -2,6 +2,9 @@
 build: main.zip
 	@echo "Done!"
 
+test:
+	go test -v
+
 main.zip: main
 	zip main.zip main
 
