@@ -1,4 +1,4 @@
-package whiskeyapi
+package main
 
 import (
     "log"
@@ -8,7 +8,7 @@ import (
     "encoding/json"
 )
 
-const WhiskeyApiUrl = "https://evening-citadel-85778.herokuapp.com:443/"
+const WhiskeyApiUrl = "https://evening-citadel-85778.herokuapp.com:443"
 
 type RandomFactApiResponse struct {
     Count int `json:"count"`
@@ -24,7 +24,7 @@ type RandomFact struct {
 }
 
 func GetRandomWhiskeyFact() string {
-    randomFactUrl := fmt.Sprintf("%srandomfact/", WhiskeyApiUrl)
+    randomFactUrl := fmt.Sprintf("%s/randomfact/", WhiskeyApiUrl)
     // make the http request
     resp, err := http.Get(randomFactUrl)
     if err != nil {
